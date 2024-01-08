@@ -1,0 +1,16 @@
+show databases;
+use consultas;
+show tables;
+create user 'Neto'@'10.150.139.173' identified by 'neto';
+grant all privileges on *.* to 'Neto'@'10.150.139.173' with grant option;
+
+grant replication slave on *.* to'Neto'@'10.150.139.173';
+flush privileges;
+flush tables with read lock;
+show master status;
+
+unlock tables;
+use consultas;
+desc login;
+insert into login values ('Paola');
+truncate login;

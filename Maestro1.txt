@@ -1,0 +1,20 @@
+use erp;
+
+create user 'Maestro1'@'192.168.1.74' identified by 'Maestro1';
+grant all privileges on *.* to 'Maestro1'@'192.168.1.74' with grant option;
+
+grant replication slave on *.* to'Maestro1'@'192.168.1.74';
+flush privileges;
+flush tables with read lock;
+show master status;
+
+unlock tables;
+
+
+use erp;
+show tables;
+desc login;
+truncate login;
+insert into login values ('Paola','12345');
+select * from login;
+show databases;

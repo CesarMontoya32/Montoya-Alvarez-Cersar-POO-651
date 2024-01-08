@@ -1,0 +1,5 @@
+use productos ;
+
+create user 'Espejeo1'@'%' identified by 'espejeo1';
+grant all privileges on *.* to 'Espejeo1'@'%';
+flush privileges

@@ -1,0 +1,10 @@
+create user 'neto'@'192.168.1.74' identified by '12345';
+grant all privileges on *.* to 'neto'@'192.168.1.74' with grant option;
+GRANT replication SLAVE ON *.* TO 'neto'@'192.168.1.74';
+flush privileges;
+flush tables with read lock;
+show master status;
+unlock tables;
+use erp;
+select * from login;
+insert into login values ('Cesar','12345');

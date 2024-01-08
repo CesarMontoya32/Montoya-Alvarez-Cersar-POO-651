@@ -1,0 +1,11 @@
+stop slave;
+reset replica;
+change replication source to source_host='10.150.135.145', source_user='Cesar', 
+source_password='Cesar', source_ssl=1, master_log_file='LAPTOP-DCLC7AP3-bin.000008', master_log_pos=1172;
+start replica;
+
+START SLAVE;
+show slave status;
+use consultas;
+show tables;
+select * from login;
